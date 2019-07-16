@@ -8,6 +8,10 @@ const routes = require('./routes');
 // Initializing Express
 const app = express();
 
+// Pug View Engine
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 // Static Files
 app.use(express.static(path.join(__dirname, 'public')));
 
