@@ -4,7 +4,7 @@
 
 ## Getting Started
 
-## Built With
+## Technologies
 
 ### Front-end
 
@@ -16,6 +16,8 @@
 ### Database
 
 - MongoDB
+
+### DevOps
 
 ## Author
 
