@@ -1,4 +1,4 @@
-#Xplora
+# Xplora
 
 ## About
 
@@ -6,5 +6,11 @@
 
 ## Built With
 
+- Node
+- Express
+- MongoDB
+
 ## Author
+
+[Mike Hume](https://mahume.github.io)
 
