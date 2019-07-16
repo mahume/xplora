@@ -4,7 +4,9 @@
   "description": "Find restaurants and coffee shops",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
+    "watch": "nodemon ./start.js --ignore public/",
+    "assets": "webpack -w --display-max-modules 0"
   },
   "author": "Mike Hume",
   "license": "ISC",
@@ -17,6 +19,10 @@
     "pug": "^2.0.4"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^4.1.1",
     "nodemon": "^1.19.1",
     "webpack": "^4.35.3"
   }
