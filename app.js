@@ -21,3 +21,5 @@ app.use(passport.session());
 
 // Handle routes
 app.use('/', routes);
+
+module.exports = app;

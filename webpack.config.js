@@ -1,4 +1,5 @@
 const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
@@ -21,6 +22,19 @@ const postcss = {
   },
 };
 
+const styles = {
+  test: /\.(scss)$/,
+  use: ExtractTextPlugin.extract([
+    'css-loader?sourceMap',
+    postcss,
+    'sass-loader?sourceMap',
+  ]),
+};
+
+const uglify = new webpack.optimize.UglifyJsPlugin({
+  compress: { warnings: false },
+});
+
 const config = {
   entry: {
     App: './public/javascripts/xplora-app.js',
@@ -30,6 +44,10 @@ const config = {
     path: path.resolve(__dirname, 'public', 'dist'),
     filename: '[name].bundle.js',
   },
+  module: {
+    rules: [javascript, styles],
+  },
+  plugins: [new ExtractTextPlugin('style.css')],
 };
 
 process.noDeprecation = true;
