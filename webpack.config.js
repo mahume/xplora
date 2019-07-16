@@ -1,7 +1,7 @@
-const autoprefixer = require('autoprefixer');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const javascript = {
   test: /\.(js)$/,
@@ -17,7 +17,7 @@ const postcss = {
   loader: 'postcss-loader',
   options: {
     plugins() {
-      return [autoprefixer({ browsers: 'last 3 versions ' })];
+      return [autoprefixer({ browsers: 'last 3 versions' })];
     },
   },
 };
@@ -31,25 +31,25 @@ const styles = {
   ]),
 };
 
-const uglify = new webpack.optimize.UglifyJsPlugin({
+const uglify = new webpack.optimize.UglifyJsPlugin({ // eslint-disable-line
   compress: { warnings: false },
 });
 
 const config = {
   entry: {
-    App: './public/javascripts/xplora-app.js',
+    App: './public/javascripts/delicious-app.js',
   },
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'public', 'dist'),
     filename: '[name].bundle.js',
   },
+
   module: {
     rules: [javascript, styles],
   },
   plugins: [new ExtractTextPlugin('style.css')],
 };
-
 process.noDeprecation = true;
 
 module.exports = config;
