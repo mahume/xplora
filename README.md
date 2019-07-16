@@ -6,8 +6,15 @@
 
 ## Built With
 
+### Front-end
+
+### Back-end
+
 - Node
 - Express
+
+### Database
+
 - MongoDB
 
 ## Author
