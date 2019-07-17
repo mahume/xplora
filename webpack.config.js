@@ -37,7 +37,7 @@ const uglify = new webpack.optimize.UglifyJsPlugin({ // eslint-disable-line
 
 const config = {
   entry: {
-    App: './public/javascripts/delicious-app.js',
+    App: './public/javascripts/xplora-app.js',
   },
   devtool: 'source-map',
   output: {
